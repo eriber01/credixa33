@@ -18,9 +18,9 @@ const steps = [
     description:
       "Nuestro equipo evalúa tu solicitud en tiempo récord. Recibirás la respuesta con el monto aprobado y las condiciones en 24 horas o menos.",
     icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>`,
-    color: "bg-brand-50 text-brand-600",
-    border: "border-brand-100",
-    badge: "bg-brand-500",
+    color: "bg-gold-50 text-gold-600",
+    border: "border-gold-200",
+    badge: "bg-gold-500",
   },
   {
     number: "03",
@@ -45,8 +45,8 @@ const steps = [
 
     <!-- Header -->
     <div class="text-center mb-14">
-      <span class="inline-flex items-center gap-2 bg-white text-brand-600 text-sm font-semibold px-4 py-2 rounded-full mb-4 border border-brand-200 shadow-sm">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <span class="inline-flex items-center gap-2 bg-amber-50 text-[#855B04] text-sm font-bold px-4 py-2 rounded-full mb-4 border border-amber-200 shadow-sm">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C69214" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
         </svg>
         Proceso simple y transparente
@@ -63,7 +63,7 @@ const steps = [
     <div class="grid md:grid-cols-3 gap-6 lg:gap-8 relative">
 
       <!-- Línea conectora decorativa (solo desktop) -->
-      <div class="hidden md:block absolute top-14 left-[calc(33.33%+1rem)] right-[calc(33.33%+1rem)] h-0.5 bg-gradient-to-r from-blue-200 via-brand-200 to-green-200 z-0" aria-hidden="true"></div>
+      <div class="hidden md:block absolute top-14 left-[calc(33.33%+1rem)] right-[calc(33.33%+1rem)] h-0.5 bg-gradient-to-r from-blue-300 via-[#C69214] to-emerald-300 z-0" aria-hidden="true"></div>
 
       {
         steps.map((step, i) => (
@@ -100,7 +100,7 @@ const steps = [
       </p>
       <a
         href="#contacto"
-        class="inline-flex items-center gap-2.5 bg-brand-500 hover:bg-brand-600 text-white font-bold text-base px-7 py-4 rounded-2xl shadow-lg shadow-brand-500/25 hover:shadow-xl hover:shadow-brand-500/35 hover:-translate-y-0.5 transition-all duration-200"
+        class="inline-flex items-center gap-2.5 bg-gradient-to-r from-[#C69214] via-[#D4AF37] to-[#B8860B] hover:from-[#B8860B] hover:to-[#9E6D08] text-white font-bold text-base px-8 py-4 rounded-2xl shadow-lg shadow-amber-600/30 hover:shadow-xl hover:shadow-amber-600/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
       >
         Comenzar ahora
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>

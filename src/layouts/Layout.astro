@@ -21,7 +21,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#FF7E20" />
+    <meta name="theme-color" content="#0047BA" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
 
@@ -74,9 +74,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       url: SITE.url,
       telephone: SITE.whatsapp.display,
       email: SITE.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Gran Vía, 32",
+        postalCode: "28013",
+        addressLocality: "Madrid",
+        addressCountry: "ES"
+      },
       areaServed: "Spain",
       currenciesAccepted: "EUR",
-      openingHours: ["Mo-Fr 08:00-18:00", "Sa 09:00-13:00"],
+      openingHours: ["Mo-Fr 12:00-21:00"],
       priceRange: `${SITE.loan.min.toLocaleString('es-ES')}${SITE.loan.currency} - ${SITE.loan.max.toLocaleString('es-ES')}${SITE.loan.currency}`,
     })}></script>
 
@@ -93,11 +100,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         background: #f1f5f9;
       }
       ::-webkit-scrollbar-thumb {
-        background: #FF7E20;
+        background: #0047BA;
         border-radius: 3px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #E6690F;
+        background: #003894;
       }
     </style>
   </head>

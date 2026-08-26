@@ -5,53 +5,44 @@
 
 export const SITE = {
   name: "Credixa33",
-  tagline: "Préstamos personales rápidos y confiables en España",
+  tagline: "Soluciones Financieras a tu alcance | Préstamos personales en España",
   description:
-    "Credixa33 ofrece préstamos personales rápidos y confiables en España. Aprobación en 24 horas, montos flexibles, pago semanal, quincenal o mensual. Solicita hoy mismo.",
+    "Credixa33 ofrece préstamos personales rápidos y confiables en España. Soluciones Financieras a tu alcance. Aprobación en 24 horas, montos flexibles y condiciones transparentes. Solicita hoy mismo.",
   url: "https://credixa33.com",
   locale: "es-ES",
 
   // ── Contacto ────────────────────────────────────────────────
   whatsapp: {
-    number: "34600000000",
-    display: "+34 600 000 000",
+    number: "447446964025",
+    display: "+44 7446 964025",
     defaultMessage:
       "Hola, estoy interesado en solicitar un préstamo personal con Credixa33. ¿Pueden orientarme?",
   },
-  email: "info@credixa33.com",
+  email: "credixacreditos@gmail.com",
 
   // ── Horarios de atención (España) ───────────────────────────
   hours: {
-    weekdays: "Lunes a Viernes: 8:00 AM – 6:00 PM",
-    saturday: "Sábados: 9:00 AM – 1:00 PM",
-    sunday: "Domingos: Cerrado",
+    weekdays: "Lunes a Viernes: 12:00 PM – 9:00 PM",
   },
 
-  // ── Ubicación / Cobertura ───────────────────────────────────
-  coverage: "Madrid, Barcelona y todo el territorio nacional en España",
+  // ── Ubicación / Dirección ───────────────────────────────────
+  address: "Gran Vía, 32, 28013 Madrid, España",
+  coverage: "Gran Vía, 32, 28013 Madrid, España",
 
   // ── Préstamos ───────────────────────────────────────────────
   loan: {
-    min: 500,     // €
-    max: 20_000,  // €
+    min: 1_000,     // €
+    max: 100_000,   // €
     currency: "€",
     currencyCode: "EUR",
+    paymentFrequency: "Semanal",
 
     // Montos de ejemplo para el simulador
-    sampleAmounts: [500, 1_000, 2_000, 5_000, 10_000, 20_000],
+    sampleAmounts: [1_000, 5_000, 10_000, 25_000, 50_000, 100_000],
 
-    // Plazos disponibles (semanas / quincenas / meses)
-    paymentFrequencies: [
-      { value: "semanal", label: "Semanal" },
-      { value: "quincenal", label: "Quincenal" },
-      { value: "mensual", label: "Mensual" },
-    ],
-
-    // Plazos de ejemplo por frecuencia
+    // Plazos disponibles (en semanas)
     terms: {
-      semanal: [4, 8, 12, 16, 24],
-      quincenal: [2, 4, 6, 8, 12],
-      mensual: [1, 2, 3, 6, 12],
+      semanal: [4, 8, 12, 24, 36, 52, 78, 104],
     },
 
     // Tasa de interés mensual de referencia (solo visual / estimada)
@@ -62,18 +53,18 @@ export const SITE = {
   seo: {
     title: "Credixa33 | Préstamos Personales Rápidos en España",
     description:
-      "Préstamos personales rápidos en España. Aprobación en 24h, montos desde 500€ hasta 20.000€. Empleados, autónomos y pensionistas son bienvenidos. ¡Solicita ahora!",
+      "Préstamos personales rápidos en España con pagos semanales. Aprobación en 24h, montos desde 1.000€ hasta 100.000€. ¡Solicita ahora!",
     ogImage: "/og-image.jpg",
     keywords:
-      "préstamos personales españa, crédito rápido españa, préstamos en madrid, crédito personal españa, préstamos rápidos online españa",
+      "préstamos personales españa, crédito rápido españa, préstamos en madrid, crédito personal españa, pagos semanales",
   },
 
   // ── Navegación ──────────────────────────────────────────────
   nav: [
     { label: "Inicio", href: "#inicio" },
     { label: "¿Cómo Funciona?", href: "#como-funciona" },
-    { label: "Requisitos", href: "#requisitos" },
     { label: "Calculadora", href: "#calculadora" },
+    { label: "Requisitos", href: "#requisitos" },
     { label: "Contacto", href: "#contacto" },
   ],
 
@@ -81,58 +72,38 @@ export const SITE = {
   requirements: [
     {
       icon: "id-card",
-      text: "DNI o NIE español vigente",
+      text: "DNI de ambos lados (vigente)",
       required: true,
     },
     {
       icon: "banknote",
-      text: "Ingresos demostrables (nómina, autónomo o pensión)",
+      text: "Justificante de ingresos (nómina, autónomo o pensión)",
       required: true,
-    },
-    {
-      icon: "university",
-      text: "Cuenta bancaria con IBAN español activa para depósito",
-      required: true,
-    },
-    {
-      icon: "phone",
-      text: "Número de teléfono / WhatsApp activo",
-      required: true,
-    },
-    {
-      icon: "user-check",
-      text: "Mayor de 18 años residente en España",
-      required: true,
-    },
-    {
-      icon: "file-text",
-      text: "Referencias personales o laborales (según monto)",
-      required: false,
     },
   ],
 
   // ── Testimonios ─────────────────────────────────────────────
   testimonials: [
     {
-      name: "María González",
+      name: "Alejandro Morales",
       location: "Madrid",
       rating: 5,
-      text: "Solicité el préstamo un lunes en la mañana y el martes ya tenía el dinero en mi cuenta. Un servicio increíblemente rápido y sin complicaciones.",
-      initials: "MG",
+      text: "Me sorprende con la rapidez con la que aprueban el préstamo, sin muchos contratiempos y también con gran eficacia.",
+      initials: "AM",
     },
     {
-      name: "Carlos Ramírez",
+      name: "Lucía Fernández",
       location: "Barcelona",
       rating: 5,
-      text: "Como autónomo, necesitaba capital de trabajo urgente. Credixa33 me aprobó el crédito en pocas horas. Las cuotas son cómodas y el proceso fue transparente.",
-      initials: "CR",
+      text: "Personal bien eficaz y capacitado. Me desembolsaron en menos de 24 horas mi préstamo.",
+      initials: "LF",
     },
     {
-      name: "Ana Peña",
+      name: "Javier Serrano",
       location: "Valencia",
       rating: 5,
-      text: "Soy pensionista y pensé que sería difícil calificar, pero me trataron excelente. Me explicaron todo claramente y resolví mi emergencia a tiempo.",
-      initials: "AP",
+      text: "He recibido oferta de préstamos personales sin muchas molestias y realmente aprecio la rapidez del servicio.",
+      initials: "JS",
     },
   ],
 };

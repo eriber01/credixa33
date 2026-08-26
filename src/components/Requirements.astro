@@ -41,19 +41,19 @@ const icons: Record<string, string> = {
         <!-- Stats de confianza -->
         <div class="grid grid-cols-2 gap-4">
           <div class="bg-[#F3F4F6] rounded-2xl p-5">
-            <p class="text-3xl font-extrabold text-brand-500 mb-1">24h</p>
+            <p class="text-3xl font-extrabold text-[#0047BA] mb-1">24h</p>
             <p class="text-sm text-[#4B5563] font-medium">Tiempo máximo de respuesta</p>
           </div>
           <div class="bg-[#F3F4F6] rounded-2xl p-5">
-            <p class="text-3xl font-extrabold text-brand-500 mb-1">+500</p>
+            <p class="text-3xl font-extrabold text-[#0047BA] mb-1">+500</p>
             <p class="text-sm text-[#4B5563] font-medium">Clientes satisfechos en España</p>
           </div>
           <div class="bg-[#F3F4F6] rounded-2xl p-5">
-            <p class="text-3xl font-extrabold text-brand-500 mb-1">0%</p>
+            <p class="text-3xl font-extrabold text-[#0047BA] mb-1">0%</p>
             <p class="text-sm text-[#4B5563] font-medium">Comisión por solicitud</p>
           </div>
           <div class="bg-[#F3F4F6] rounded-2xl p-5">
-            <p class="text-3xl font-extrabold text-brand-500 mb-1">100%</p>
+            <p class="text-3xl font-extrabold text-[#0047BA] mb-1">100%</p>
             <p class="text-sm text-[#4B5563] font-medium">Proceso digital y remoto</p>
           </div>
         </div>
@@ -63,7 +63,7 @@ const icons: Record<string, string> = {
       <div>
         <div class="bg-white rounded-3xl border border-gray-200 shadow-sm overflow-hidden">
           <!-- Header de la card -->
-          <div class="bg-gradient-to-r from-brand-500 to-brand-600 px-7 py-5">
+          <div class="bg-gradient-to-r from-[#0047BA] to-[#002b73] px-7 py-5">
             <h3 class="text-white font-bold text-lg">Lista de requisitos</h3>
             <p class="text-white/80 text-sm mt-1">Documentos y condiciones necesarias</p>
           </div>
@@ -74,7 +74,7 @@ const icons: Record<string, string> = {
               requirements.map((req) => (
                 <li class="flex items-start gap-4 px-7 py-5 hover:bg-gray-50/70 transition-colors duration-150 group">
                   <!-- Icono -->
-                  <div class={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center ${req.required ? 'bg-brand-50 text-brand-600' : 'bg-gray-100 text-[#6B7280]'} group-hover:scale-105 transition-transform duration-200`}>
+                  <div class={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center ${req.required ? 'bg-blue-50 text-[#0047BA]' : 'bg-gray-100 text-[#6B7280]'} group-hover:scale-105 transition-transform duration-200`}>
                     <Fragment set:html={icons[req.icon] ?? icons['file-text']} />
                   </div>
 
@@ -82,7 +82,7 @@ const icons: Record<string, string> = {
                   <div class="flex-1 min-w-0">
                     <p class="text-sm font-semibold text-[#111827] leading-snug">{req.text}</p>
                     {req.required ? (
-                      <span class="inline-flex items-center gap-1 mt-1.5 text-xs font-medium text-brand-600">
+                      <span class="inline-flex items-center gap-1 mt-1.5 text-xs font-medium text-[#0047BA]">
                         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                         Requerido
                       </span>
@@ -113,7 +113,7 @@ const icons: Record<string, string> = {
               href={`https://wa.me/${SITE.whatsapp.number}?text=${encodeURIComponent('Hola Credixa33, quiero saber si califico para un prestamo personal. Me pueden orientar?')}`}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white text-sm font-bold px-5 py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg"
+              class="inline-flex items-center gap-2 bg-gradient-to-r from-[#C69214] via-[#D4AF37] to-[#B8860B] hover:from-[#B8860B] hover:to-[#9E6D08] text-white text-sm font-bold px-6 py-3.5 rounded-xl transition-all duration-200 shadow-md shadow-amber-600/25 hover:shadow-lg"
               aria-label="Consultar si califico por WhatsApp"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
