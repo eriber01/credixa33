@@ -3,7 +3,7 @@ import { SITE } from '../config/site';
 
 const defaultAmount = 10000;
 const defaultRate = 3;
-const defaultWeeks = 52;
+const defaultMonths = 25;
 ---
 
 <!-- ===== MÓDULO CALCULADORA / SIMULADOR ===== -->
@@ -26,7 +26,7 @@ const defaultWeeks = 52;
         Calcula tu préstamo
       </h2>
       <p class="text-base text-[#4B5563] mt-2 max-w-xl mx-auto">
-        Ajusta el monto, tasa de interés y plazo en semanas para simular tu cuota en tiempo real.
+        Ajusta el monto, tasa de interés y plazo en meses para simular tu cuota en tiempo real.
       </p>
     </div>
 
@@ -88,26 +88,26 @@ const defaultWeeks = 52;
             </div>
           </div>
 
-          <!-- Semanas -->
+          <!-- Meses -->
           <div>
             <div class="flex items-center justify-between text-sm font-semibold text-[#374151] mb-3">
-              <span>Semanas</span>
+              <span>Meses</span>
               <span class="text-[#111827] font-bold text-sm">
-                <span id="weeks-value-display">{defaultWeeks}</span> semanas
+                <span id="months-value-display">{defaultMonths}</span> meses
               </span>
             </div>
             <input
               type="range"
-              id="weeks-slider"
+              id="months-slider"
               min="4"
-              max="156"
+              max="160"
               step="1"
-              value={defaultWeeks}
+              value={defaultMonths}
               class="range-slider w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
             />
             <div class="flex justify-between text-xs text-[#9CA3AF] font-medium mt-1.5">
               <span>4</span>
-              <span>156</span>
+              <span>160</span>
             </div>
           </div>
         </div>
@@ -149,20 +149,20 @@ const defaultWeeks = 52;
           </div>
           <div class="border-b border-dashed border-gray-200 my-1"></div>
 
-          <!-- Fila 3: Semanas -->
+          <!-- Fila 3: Meses -->
           <div class="flex justify-between items-center py-2.5 text-sm">
-            <span class="text-[#4B5563] font-medium">Semanas</span>
-            <span id="summary-weeks" class="text-[#111827] font-semibold">52</span>
+            <span class="text-[#4B5563] font-medium">Meses</span>
+            <span id="summary-months" class="text-[#111827] font-semibold">25</span>
           </div>
           <div class="border-b border-dashed border-gray-200 my-2"></div>
 
-          <!-- Fila Total (Cuota Semanal) -->
+          <!-- Fila Total (Cuota Mensual) -->
           <div class="flex justify-between items-center pt-3 pb-1">
             <span class="text-lg font-bold text-[#111827]">Total</span>
-            <span id="summary-total" class="text-2xl font-extrabold text-[#0047BA]">195,23 €</span>
+            <span id="summary-total" class="text-2xl font-extrabold text-[#0047BA]">413,13 €</span>
           </div>
           <p class="text-xs text-[#9CA3AF] text-right mb-6">
-            cuota fija semanal estimada
+            cuota fija mensual estimada
           </p>
         </div>
 
@@ -224,14 +224,14 @@ const defaultWeeks = 52;
 <script define:vars={{ waNumber: SITE.whatsapp.number, currencySymbol: SITE.loan.currency }}>
   const amountInput = document.getElementById('loan-amount-input');
   const rateSlider = document.getElementById('rate-slider');
-  const weeksSlider = document.getElementById('weeks-slider');
+  const monthsSlider = document.getElementById('months-slider');
 
   const rateValueDisplay = document.getElementById('rate-value-display');
-  const weeksValueDisplay = document.getElementById('weeks-value-display');
+  const monthsValueDisplay = document.getElementById('months-value-display');
 
   const summaryAmount = document.getElementById('summary-amount');
   const summaryRate = document.getElementById('summary-rate');
-  const summaryWeeks = document.getElementById('summary-weeks');
+  const summaryMonths = document.getElementById('summary-months');
   const summaryTotal = document.getElementById('summary-total');
   const calcWaBtn = document.getElementById('calc-wa-btn');
 
@@ -243,14 +243,14 @@ const defaultWeeks = 52;
     slider.style.background = `linear-gradient(to right, ${color} 0%, ${color} ${percentage}%, #E2E8F0 ${percentage}%, #E2E8F0 100%)`;
   }
 
-  function calculateWeeklyPayment(principal, annualRatePercent, weeks) {
-    if (weeks <= 0 || principal <= 0) return 0;
-    const weeklyRate = (annualRatePercent / 100) / 52;
-    if (weeklyRate === 0) {
-      return principal / weeks;
+  function calculateMonthlyPayment(principal, annualRatePercent, months) {
+    if (months <= 0 || principal <= 0) return 0;
+    const monthlyRate = (annualRatePercent / 100) / 12;
+    if (monthlyRate === 0) {
+      return principal / months;
     }
-    const factor = Math.pow(1 + weeklyRate, weeks);
-    return (principal * weeklyRate * factor) / (factor - 1);
+    const factor = Math.pow(1 + monthlyRate, months);
+    return (principal * monthlyRate * factor) / (factor - 1);
   }
 
   function formatMoney(amount) {
@@ -260,28 +260,28 @@ const defaultWeeks = 52;
   function recalculate() {
     let amount = parseFloat(amountInput.value) || 0;
     let rate = parseFloat(rateSlider.value) || 0;
-    let weeks = parseInt(weeksSlider.value) || 1;
+    let months = parseInt(monthsSlider.value) || 1;
 
     rateValueDisplay.textContent = rate;
-    weeksValueDisplay.textContent = weeks;
+    monthsValueDisplay.textContent = months;
 
     updateSliderBackground(rateSlider, '#0047BA');
-    updateSliderBackground(weeksSlider, '#0047BA');
+    updateSliderBackground(monthsSlider, '#0047BA');
 
     summaryAmount.textContent = formatMoney(amount);
     summaryRate.textContent = `${rate} %`;
-    summaryWeeks.textContent = weeks;
+    summaryMonths.textContent = months;
 
-    const weeklyPayment = calculateWeeklyPayment(amount, rate, weeks);
-    summaryTotal.textContent = formatMoney(weeklyPayment);
+    const monthlyPayment = calculateMonthlyPayment(amount, rate, months);
+    summaryTotal.textContent = formatMoney(monthlyPayment);
 
     // WhatsApp pre-filled message
     const msg = encodeURIComponent(
       `Hola Credixa33! He calculado mi préstamo en la web con los siguientes datos:\n\n` +
       `* Monto solicitado: ${formatMoney(amount)}\n` +
       `* Tasa de interés anual: ${rate} %\n` +
-      `* Plazo: ${weeks} semanas\n` +
-      `* Cuota semanal estimada: ${formatMoney(weeklyPayment)}\n\n` +
+      `* Plazo: ${months} meses\n` +
+      `* Cuota mensual estimada: ${formatMoney(monthlyPayment)}\n\n` +
       `¿Cómo puedo iniciar el trámite?`
     );
     calcWaBtn.href = `https://wa.me/${waNumber}?text=${msg}`;
@@ -289,7 +289,7 @@ const defaultWeeks = 52;
 
   amountInput.addEventListener('input', recalculate);
   rateSlider.addEventListener('input', recalculate);
-  weeksSlider.addEventListener('input', recalculate);
+  monthsSlider.addEventListener('input', recalculate);
 
   // Initial execution
   recalculate();

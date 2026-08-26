@@ -35,14 +35,14 @@ export const SITE = {
     max: 100_000,   // €
     currency: "€",
     currencyCode: "EUR",
-    paymentFrequency: "Semanal",
+    paymentFrequency: "Mensual",
 
     // Montos de ejemplo para el simulador
     sampleAmounts: [1_000, 5_000, 10_000, 25_000, 50_000, 100_000],
 
-    // Plazos disponibles (en semanas)
+    // Plazos disponibles (en meses)
     terms: {
-      semanal: [4, 8, 12, 24, 36, 52, 78, 104],
+      mensual: [6, 12, 24, 36, 48, 60, 84, 120],
     },
 
     // Tasa de interés mensual de referencia (solo visual / estimada)
@@ -53,10 +53,10 @@ export const SITE = {
   seo: {
     title: "Credixa33 | Préstamos Personales Rápidos en España",
     description:
-      "Préstamos personales rápidos en España con pagos semanales. Aprobación en 24h, montos desde 1.000€ hasta 100.000€. ¡Solicita ahora!",
+      "Préstamos personales rápidos en España con pagos mensuales. Aprobación en 24h, montos desde 1.000€ hasta 100.000€. ¡Solicita ahora!",
     ogImage: "/og-image.jpg",
     keywords:
-      "préstamos personales españa, crédito rápido españa, préstamos en madrid, crédito personal españa, pagos semanales",
+      "préstamos personales españa, crédito rápido españa, préstamos en madrid, crédito personal españa, pagos mensuales",
   },
 
   // ── Navegación ──────────────────────────────────────────────

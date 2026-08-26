@@ -3,7 +3,7 @@ import { SITE } from '../config/site';
 
 const waNumber = SITE.whatsapp.number;
 const amountOptions = [1000, 2500, 5000, 10000, 20000, 35000, 50000, 75000, 100000];
-const termOptions = [4, 8, 12, 24, 36, 52, 78, 104];
+const termOptions = [6, 12, 24, 36, 48, 60, 84, 120];
 ---
 
 <!-- ===== FORMULARIO DE SOLICITUD ===== -->
@@ -206,7 +206,7 @@ const termOptions = [4, 8, 12, 24, 36, 52, 78, 104];
                 >
                   <option value="" disabled selected>Selecciona un plazo</option>
                   {termOptions.map((t) => (
-                    <option value={t}>{t} {t === 1 ? 'semana' : 'semanas'}</option>
+                    <option value={t}>{t} {t === 1 ? 'mes' : 'meses'}</option>
                   ))}
                 </select>
                 <p class="error-msg text-xs text-red-500 mt-1.5 hidden" id="plazo-error" role="alert"></p>
@@ -306,12 +306,12 @@ const termOptions = [4, 8, 12, 24, 36, 52, 78, 104];
     const montoFmt = `${parseInt(monto).toLocaleString('es-ES')}€`;
 
     const msg = encodeURIComponent(
-      `Hola Credixa33! Quiero solicitar un prestamo personal.\n\n` +
+      `Hola Credixa33! Quiero solicitar un prestamo personal con cuotas mensuales.\n\n` +
       `*Nombre:* ${nombre}\n` +
-      `*Telefono:* +34 ${telefono}\n` +
+      `*Telefono:* ${telefono}\n` +
       `*DNI/NIE:* ${cedula}\n` +
       `*Monto solicitado:* ${montoFmt}\n` +
-      `*Plazo deseado:* ${plazo} ${parseInt(plazo) === 1 ? 'semana' : 'semanas'}\n` +
+      `*Plazo deseado:* ${plazo} ${parseInt(plazo) === 1 ? 'mes' : 'meses'} (pagos mensuales)\n` +
       `*Tipo de ingreso:* ${ingresoLabel}\n\n` +
       `Por favor, indiquenme los siguientes pasos para continuar con el proceso. Gracias!`
     );
