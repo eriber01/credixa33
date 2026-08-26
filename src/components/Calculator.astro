@@ -56,7 +56,7 @@ const freqs = loan.paymentFrequencies;
                     class={`amount-btn text-sm font-semibold px-3 py-3.5 rounded-xl border-2 transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-1 ${i === 2 ? 'border-brand-500 bg-brand-50 text-brand-600' : 'border-gray-200 bg-white text-[#374151] hover:border-brand-300 hover:bg-brand-50/50 hover:text-brand-500'}`}
                     aria-pressed={i === 2 ? 'true' : 'false'}
                   >
-                    {SITE.loan.currency}{amount.toLocaleString('es-DO')}
+                    {amount.toLocaleString('es-ES')}{SITE.loan.currency}
                   </button>
                 ))
               }
@@ -116,14 +116,14 @@ const freqs = loan.paymentFrequencies;
           <div>
             <p class="text-sm font-semibold opacity-80 uppercase tracking-wider mb-1">Estimado de cuota</p>
             <div id="cuota-display" class="text-4xl lg:text-5xl font-extrabold tracking-tight mb-1">
-              RD$9,200
+              368€
             </div>
             <p id="freq-label-display" class="text-sm opacity-80 font-medium mb-6">por mes</p>
 
             <div class="space-y-3">
               <div class="flex justify-between items-center bg-white/15 rounded-xl px-4 py-2.5 text-sm">
                 <span class="opacity-90">Monto solicitado</span>
-                <span id="monto-display" class="font-bold">RD$50,000</span>
+                <span id="monto-display" class="font-bold">2.000€</span>
               </div>
               <div class="flex justify-between items-center bg-white/15 rounded-xl px-4 py-2.5 text-sm">
                 <span class="opacity-90">Plazo</span>
@@ -161,7 +161,7 @@ const freqs = loan.paymentFrequencies;
 </section>
 
 <script define:vars={{ waNumber: SITE.whatsapp.number, monthlyRate: SITE.loan.monthlyRate }}>
-  let selectedAmount = 15000;
+  let selectedAmount = 2000;
   let selectedFreq = 'mensual';
   let selectedPlazo = 6;
 
@@ -170,7 +170,7 @@ const freqs = loan.paymentFrequencies;
   const freqMultiplier = { semanal: 4.33, quincenal: 2.16, mensual: 1 };
 
   function formatCurrency(n) {
-    return 'RD$' + Math.round(n).toLocaleString('es-DO');
+    return Math.round(n).toLocaleString('es-ES') + '€';
   }
 
   function computeCuota(amount, months, freq) {

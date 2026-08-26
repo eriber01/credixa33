@@ -1,6 +1,6 @@
 # Credixa33 — Landing Page
 
-Landing page de alto impacto para **Credixa33**, negocio de préstamos personales en República Dominicana. Construida con **Astro 5 + Tailwind CSS + TypeScript**.
+Landing page de alto impacto para **Credixa33**, negocio de préstamos personales en España. Construida con **Astro 5 + Tailwind CSS + TypeScript**.
 
 ## 🚀 Comandos
 

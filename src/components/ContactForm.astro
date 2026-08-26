@@ -2,7 +2,7 @@
 import { SITE } from '../config/site';
 
 const waNumber = SITE.whatsapp.number;
-const amountOptions = [5000, 10000, 15000, 25000, 50000, 75000, 100000, 150000, 200000];
+const amountOptions = [500, 1000, 2000, 3000, 5000, 7500, 10000, 15000, 20000];
 const termOptions = [1, 2, 3, 6, 12];
 ---
 
@@ -120,34 +120,34 @@ const termOptions = [1, 2, 3, 6, 12];
                 Teléfono / WhatsApp <span class="text-red-500" aria-label="requerido">*</span>
               </label>
               <div class="relative">
-                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-[#9CA3AF] text-sm font-medium select-none" aria-hidden="true">+1</span>
+                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-[#9CA3AF] text-sm font-medium select-none" aria-hidden="true">+34</span>
                 <input
                   type="tel"
                   id="telefono"
                   name="telefono"
                   autocomplete="tel"
                   required
-                  placeholder="809 123 4567"
-                  class="w-full border-2 border-gray-200 hover:border-gray-300 focus:border-brand-500 focus:outline-none rounded-xl pl-10 pr-4 py-3.5 text-sm text-[#111827] placeholder-[#9CA3AF] transition-colors duration-150 bg-white"
+                  placeholder="600 123 456"
+                  class="w-full border-2 border-gray-200 hover:border-gray-300 focus:border-brand-500 focus:outline-none rounded-xl pl-12 pr-4 py-3.5 text-sm text-[#111827] placeholder-[#9CA3AF] transition-colors duration-150 bg-white"
                   aria-required="true"
                 />
               </div>
               <p class="error-msg text-xs text-red-500 mt-1.5 hidden" id="telefono-error" role="alert"></p>
             </div>
 
-            <!-- Cédula -->
+            <!-- DNI / NIE -->
             <div>
               <label for="cedula" class="block text-sm font-semibold text-[#374151] mb-2">
-                Número de cédula <span class="text-red-500" aria-label="requerido">*</span>
+                Número de DNI / NIE <span class="text-red-500" aria-label="requerido">*</span>
               </label>
               <input
                 type="text"
                 id="cedula"
                 name="cedula"
                 required
-                placeholder="001-1234567-8"
-                maxlength="13"
-                class="w-full border-2 border-gray-200 hover:border-gray-300 focus:border-brand-500 focus:outline-none rounded-xl px-4 py-3.5 text-sm text-[#111827] placeholder-[#9CA3AF] transition-colors duration-150 bg-white"
+                placeholder="12345678Z"
+                maxlength="9"
+                class="w-full border-2 border-gray-200 hover:border-gray-300 focus:border-brand-500 focus:outline-none rounded-xl px-4 py-3.5 text-sm text-[#111827] uppercase placeholder-[#9CA3AF] transition-colors duration-150 bg-white"
                 aria-required="true"
               />
               <p class="error-msg text-xs text-red-500 mt-1.5 hidden" id="cedula-error" role="alert"></p>
@@ -157,7 +157,7 @@ const termOptions = [1, 2, 3, 6, 12];
             <div class="grid sm:grid-cols-2 gap-4">
               <div>
                 <label for="monto" class="block text-sm font-semibold text-[#374151] mb-2">
-                  Monto solicitado (RD$) <span class="text-red-500" aria-label="requerido">*</span>
+                  Monto solicitado (€) <span class="text-red-500" aria-label="requerido">*</span>
                 </label>
                 <select
                   id="monto"
@@ -168,7 +168,7 @@ const termOptions = [1, 2, 3, 6, 12];
                 >
                   <option value="" disabled selected>Selecciona un monto</option>
                   {amountOptions.map((a) => (
-                    <option value={a}>RD${a.toLocaleString('es-DO')}</option>
+                    <option value={a}>{a.toLocaleString('es-ES')}€</option>
                   ))}
                 </select>
                 <p class="error-msg text-xs text-red-500 mt-1.5 hidden" id="monto-error" role="alert"></p>
@@ -205,9 +205,9 @@ const termOptions = [1, 2, 3, 6, 12];
                 class="w-full border-2 border-gray-200 hover:border-gray-300 focus:border-brand-500 focus:outline-none rounded-xl px-4 py-3.5 text-sm text-[#111827] bg-white transition-colors duration-150 cursor-pointer"
               >
                 <option value="">Selecciona (opcional)</option>
-                <option value="empleado">Empleado / Asalariado</option>
-                <option value="emprendedor">Emprendedor / Negocio propio</option>
-                <option value="pensionado">Pensionado / Jubilado</option>
+                <option value="empleado">Empleado / En nómina</option>
+                <option value="emprendedor">Autónomo / Negocio propio</option>
+                <option value="pensionado">Pensionista / Jubilado</option>
                 <option value="otro">Otro</option>
               </select>
             </div>
@@ -270,27 +270,27 @@ const termOptions = [1, 2, 3, 6, 12];
 
     if (!nombre || nombre.length < 3) showError('nombre', 'Por favor ingresa tu nombre completo.');
     if (!telefono || telefono.replace(/\D/g, '').length < 7) showError('telefono', 'Ingresa un número de teléfono válido.');
-    if (!cedula || cedula.replace(/\D/g, '').length < 8) showError('cedula', 'Ingresa tu número de cédula.');
+    if (!cedula || cedula.length < 7) showError('cedula', 'Ingresa un número de DNI o NIE válido.');
     if (!monto) showError('monto', 'Selecciona el monto que necesitas.');
     if (!plazo) showError('plazo', 'Selecciona el plazo deseado.');
 
     if (!valid) return;
 
     const ingresoLabel = {
-      empleado: 'Empleado / Asalariado',
-      emprendedor: 'Emprendedor / Negocio propio',
-      pensionado: 'Pensionado / Jubilado',
+      empleado: 'Empleado / En nómina',
+      emprendedor: 'Autónomo / Negocio propio',
+      pensionado: 'Pensionista / Jubilado',
       otro: 'Otro',
       '': 'No especificado',
     }[tipoIngreso] ?? tipoIngreso;
 
-    const montoFmt = `RD$${parseInt(monto).toLocaleString('es-DO')}`;
+    const montoFmt = `${parseInt(monto).toLocaleString('es-ES')}€`;
 
     const msg = encodeURIComponent(
       `Hola Credixa33! Quiero solicitar un prestamo personal.\n\n` +
       `*Nombre:* ${nombre}\n` +
-      `*Telefono:* +1 ${telefono}\n` +
-      `*Cedula:* ${cedula}\n` +
+      `*Telefono:* +34 ${telefono}\n` +
+      `*DNI/NIE:* ${cedula}\n` +
       `*Monto solicitado:* ${montoFmt}\n` +
       `*Plazo deseado:* ${plazo} ${parseInt(plazo) === 1 ? 'mes' : 'meses'}\n` +
       `*Tipo de ingreso:* ${ingresoLabel}\n\n` +
@@ -300,11 +300,8 @@ const termOptions = [1, 2, 3, 6, 12];
     window.open(`https://wa.me/${waNumber}?text=${msg}`, '_blank');
   });
 
-  // Formateo automático de cédula
+  // Formateo automático de DNI/NIE (mayúsculas)
   document.getElementById('cedula').addEventListener('input', (e) => {
-    let v = e.target.value.replace(/\D/g, '').substring(0, 11);
-    if (v.length > 3) v = v.substring(0, 3) + '-' + v.substring(3);
-    if (v.length > 11) v = v.substring(0, 11) + '-' + v.substring(11);
-    e.target.value = v;
+    e.target.value = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, '').substring(0, 9);
   });
 </script>

@@ -40,7 +40,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(ogImage, Astro.site)} />
-    <meta property="og:locale" content="es_DO" />
+    <meta property="og:locale" content="es_ES" />
     <meta property="og:site_name" content={SITE.name} />
 
     <!-- Twitter Card -->
@@ -74,10 +74,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       url: SITE.url,
       telephone: SITE.whatsapp.display,
       email: SITE.email,
-      areaServed: "Dominican Republic",
-      currenciesAccepted: "DOP",
+      areaServed: "Spain",
+      currenciesAccepted: "EUR",
       openingHours: ["Mo-Fr 08:00-18:00", "Sa 09:00-13:00"],
-      priceRange: `${SITE.loan.currency}${SITE.loan.min.toLocaleString('es-DO')} - ${SITE.loan.currency}${SITE.loan.max.toLocaleString('es-DO')}`,
+      priceRange: `${SITE.loan.min.toLocaleString('es-ES')}${SITE.loan.currency} - ${SITE.loan.max.toLocaleString('es-ES')}${SITE.loan.currency}`,
     })}></script>
 
     <style>
