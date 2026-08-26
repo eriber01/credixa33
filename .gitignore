@@ -1,0 +1,13 @@
+# Build & Output
+dist/
+.astro/
+
+# Dependencies
+node_modules/
+
+# Environment / Temp
+.env
+.env.*
+!.env.example
+.ds_store
+Thumbs.db

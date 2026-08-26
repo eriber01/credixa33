@@ -1,0 +1,310 @@
+---
+import { SITE } from '../config/site';
+
+const waNumber = SITE.whatsapp.number;
+const amountOptions = [5000, 10000, 15000, 25000, 50000, 75000, 100000, 150000, 200000];
+const termOptions = [1, 2, 3, 6, 12];
+---
+
+<!-- ===== FORMULARIO DE SOLICITUD ===== -->
+<section
+  id="contacto"
+  class="py-20 lg:py-28 bg-white"
+  aria-label="Formulario de solicitud de préstamo"
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+
+      <!-- Info lateral -->
+      <div class="lg:col-span-2">
+        <span class="inline-flex items-center gap-2 bg-brand-50 text-brand-600 text-sm font-semibold px-4 py-2 rounded-full mb-6 border border-brand-200">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+          </svg>
+          Solicitud rápida
+        </span>
+
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#111827] mb-5">
+          ¡Solicita tu préstamo ahora mismo!
+        </h2>
+        <p class="text-[#4B5563] leading-relaxed mb-8">
+          Completa el formulario y te contactaremos a través de WhatsApp en menos de 24 horas con la respuesta a tu solicitud.
+        </p>
+
+        <!-- Beneficios -->
+        <ul class="space-y-4" role="list">
+          {[
+            'Respuesta en menos de 24 horas',
+            'Sin visitas presenciales obligatorias',
+            'Desembolso directo a tu cuenta bancaria',
+            'Cuotas adaptadas a tu capacidad de pago',
+            'Atención personalizada y confidencial',
+          ].map((item) => (
+            <li class="flex items-center gap-3 text-sm text-[#374151]">
+              <div class="w-6 h-6 bg-brand-50 rounded-full flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FF7E20" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <!-- Datos de contacto -->
+        <div class="mt-10 space-y-4">
+          <a
+            href={`https://wa.me/${waNumber}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-3 text-sm text-[#374151] hover:text-brand-500 transition-colors duration-200 group"
+            aria-label={`WhatsApp: ${SITE.whatsapp.display}`}
+          >
+            <div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center group-hover:bg-green-100 transition-colors duration-200 flex-shrink-0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold">{SITE.whatsapp.display}</p>
+              <p class="text-xs text-[#9CA3AF]">WhatsApp directo</p>
+            </div>
+          </a>
+
+          <a
+            href={`mailto:${SITE.email}`}
+            class="flex items-center gap-3 text-sm text-[#374151] hover:text-brand-500 transition-colors duration-200 group"
+            aria-label={`Email: ${SITE.email}`}
+          >
+            <div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center group-hover:bg-blue-100 transition-colors duration-200 flex-shrink-0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold">{SITE.email}</p>
+              <p class="text-xs text-[#9CA3AF]">Correo electrónico</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="lg:col-span-3">
+        <div class="bg-white rounded-3xl border border-gray-200 shadow-lg p-7 lg:p-9">
+          <h3 class="text-xl font-bold text-[#111827] mb-6">Completa tu solicitud</h3>
+
+          <form id="loan-form" novalidate class="space-y-5">
+            <!-- Nombre completo -->
+            <div>
+              <label for="nombre" class="block text-sm font-semibold text-[#374151] mb-2">
+                Nombre completo <span class="text-red-500" aria-label="requerido">*</span>
+              </label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                autocomplete="name"
+                required
+                placeholder="Ej. Juan Alberto Pérez"
+                class="w-full border-2 border-gray-200 hover:border-gray-300 focus:border-brand-500 focus:outline-none rounded-xl px-4 py-3.5 text-sm text-[#111827] placeholder-[#9CA3AF] transition-colors duration-150 bg-white"
+                aria-required="true"
+              />
+              <p class="error-msg text-xs text-red-500 mt-1.5 hidden" id="nombre-error" role="alert"></p>
+            </div>
+
+            <!-- Teléfono / WhatsApp -->
+            <div>
+              <label for="telefono" class="block text-sm font-semibold text-[#374151] mb-2">
+                Teléfono / WhatsApp <span class="text-red-500" aria-label="requerido">*</span>
+              </label>
+              <div class="relative">
+                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-[#9CA3AF] text-sm font-medium select-none" aria-hidden="true">+1</span>
+                <input
+                  type="tel"
+                  id="telefono"
+                  name="telefono"
+                  autocomplete="tel"
+                  required
+                  placeholder="809 123 4567"
+                  class="w-full border-2 border-gray-200 hover:border-gray-300 focus:border-brand-500 focus:outline-none rounded-xl pl-10 pr-4 py-3.5 text-sm text-[#111827] placeholder-[#9CA3AF] transition-colors duration-150 bg-white"
+                  aria-required="true"
+                />
+              </div>
+              <p class="error-msg text-xs text-red-500 mt-1.5 hidden" id="telefono-error" role="alert"></p>
+            </div>
+
+            <!-- Cédula -->
+            <div>
+              <label for="cedula" class="block text-sm font-semibold text-[#374151] mb-2">
+                Número de cédula <span class="text-red-500" aria-label="requerido">*</span>
+              </label>
+              <input
+                type="text"
+                id="cedula"
+                name="cedula"
+                required
+                placeholder="001-1234567-8"
+                maxlength="13"
+                class="w-full border-2 border-gray-200 hover:border-gray-300 focus:border-brand-500 focus:outline-none rounded-xl px-4 py-3.5 text-sm text-[#111827] placeholder-[#9CA3AF] transition-colors duration-150 bg-white"
+                aria-required="true"
+              />
+              <p class="error-msg text-xs text-red-500 mt-1.5 hidden" id="cedula-error" role="alert"></p>
+            </div>
+
+            <!-- Monto + Plazo en grid -->
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="monto" class="block text-sm font-semibold text-[#374151] mb-2">
+                  Monto solicitado (RD$) <span class="text-red-500" aria-label="requerido">*</span>
+                </label>
+                <select
+                  id="monto"
+                  name="monto"
+                  required
+                  class="w-full border-2 border-gray-200 hover:border-gray-300 focus:border-brand-500 focus:outline-none rounded-xl px-4 py-3.5 text-sm text-[#111827] bg-white transition-colors duration-150 cursor-pointer"
+                  aria-required="true"
+                >
+                  <option value="" disabled selected>Selecciona un monto</option>
+                  {amountOptions.map((a) => (
+                    <option value={a}>RD${a.toLocaleString('es-DO')}</option>
+                  ))}
+                </select>
+                <p class="error-msg text-xs text-red-500 mt-1.5 hidden" id="monto-error" role="alert"></p>
+              </div>
+
+              <div>
+                <label for="plazo" class="block text-sm font-semibold text-[#374151] mb-2">
+                  Plazo deseado <span class="text-red-500" aria-label="requerido">*</span>
+                </label>
+                <select
+                  id="plazo"
+                  name="plazo"
+                  required
+                  class="w-full border-2 border-gray-200 hover:border-gray-300 focus:border-brand-500 focus:outline-none rounded-xl px-4 py-3.5 text-sm text-[#111827] bg-white transition-colors duration-150 cursor-pointer"
+                  aria-required="true"
+                >
+                  <option value="" disabled selected>Selecciona un plazo</option>
+                  {termOptions.map((t) => (
+                    <option value={t}>{t} {t === 1 ? 'mes' : 'meses'}</option>
+                  ))}
+                </select>
+                <p class="error-msg text-xs text-red-500 mt-1.5 hidden" id="plazo-error" role="alert"></p>
+              </div>
+            </div>
+
+            <!-- Tipo de ingreso -->
+            <div>
+              <label for="tipo-ingreso" class="block text-sm font-semibold text-[#374151] mb-2">
+                Tipo de ingreso
+              </label>
+              <select
+                id="tipo-ingreso"
+                name="tipo_ingreso"
+                class="w-full border-2 border-gray-200 hover:border-gray-300 focus:border-brand-500 focus:outline-none rounded-xl px-4 py-3.5 text-sm text-[#111827] bg-white transition-colors duration-150 cursor-pointer"
+              >
+                <option value="">Selecciona (opcional)</option>
+                <option value="empleado">Empleado / Asalariado</option>
+                <option value="emprendedor">Emprendedor / Negocio propio</option>
+                <option value="pensionado">Pensionado / Jubilado</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <!-- Submit -->
+            <button
+              type="submit"
+              id="submit-btn"
+              class="w-full flex items-center justify-center gap-2.5 bg-brand-500 hover:bg-brand-600 active:bg-brand-700 text-white font-bold text-base px-6 py-4 rounded-2xl shadow-lg shadow-brand-500/30 hover:shadow-xl hover:shadow-brand-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Enviar solicitud por WhatsApp
+            </button>
+
+            <p class="text-center text-xs text-[#9CA3AF] leading-relaxed">
+              Al enviar, se abrirá WhatsApp con tu solicitud pre-armada. Tus datos son tratados con absoluta
+              <strong class="text-[#6B7280]">confidencialidad y privacidad</strong>.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ waNumber }}>
+  const form = document.getElementById('loan-form');
+
+  // Validación y envío
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let valid = true;
+
+    function showError(fieldId, msg) {
+      const el = document.getElementById(`${fieldId}-error`);
+      const input = document.getElementById(fieldId);
+      if (el) { el.textContent = msg; el.classList.remove('hidden'); }
+      if (input) { input.classList.add('border-red-400'); input.classList.remove('border-gray-200'); }
+      valid = false;
+    }
+    function clearError(fieldId) {
+      const el = document.getElementById(`${fieldId}-error`);
+      const input = document.getElementById(fieldId);
+      if (el) { el.textContent = ''; el.classList.add('hidden'); }
+      if (input) { input.classList.remove('border-red-400'); input.classList.add('border-gray-200'); }
+    }
+
+    const nombre = document.getElementById('nombre').value.trim();
+    const telefono = document.getElementById('telefono').value.trim();
+    const cedula = document.getElementById('cedula').value.trim();
+    const monto = document.getElementById('monto').value;
+    const plazo = document.getElementById('plazo').value;
+    const tipoIngreso = document.getElementById('tipo-ingreso').value;
+
+    clearError('nombre'); clearError('telefono'); clearError('cedula');
+    clearError('monto'); clearError('plazo');
+
+    if (!nombre || nombre.length < 3) showError('nombre', 'Por favor ingresa tu nombre completo.');
+    if (!telefono || telefono.replace(/\D/g, '').length < 7) showError('telefono', 'Ingresa un número de teléfono válido.');
+    if (!cedula || cedula.replace(/\D/g, '').length < 8) showError('cedula', 'Ingresa tu número de cédula.');
+    if (!monto) showError('monto', 'Selecciona el monto que necesitas.');
+    if (!plazo) showError('plazo', 'Selecciona el plazo deseado.');
+
+    if (!valid) return;
+
+    const ingresoLabel = {
+      empleado: 'Empleado / Asalariado',
+      emprendedor: 'Emprendedor / Negocio propio',
+      pensionado: 'Pensionado / Jubilado',
+      otro: 'Otro',
+      '': 'No especificado',
+    }[tipoIngreso] ?? tipoIngreso;
+
+    const montoFmt = `RD$${parseInt(monto).toLocaleString('es-DO')}`;
+
+    const msg = encodeURIComponent(
+      `Hola Credixa33! Quiero solicitar un prestamo personal.\n\n` +
+      `*Nombre:* ${nombre}\n` +
+      `*Telefono:* +1 ${telefono}\n` +
+      `*Cedula:* ${cedula}\n` +
+      `*Monto solicitado:* ${montoFmt}\n` +
+      `*Plazo deseado:* ${plazo} ${parseInt(plazo) === 1 ? 'mes' : 'meses'}\n` +
+      `*Tipo de ingreso:* ${ingresoLabel}\n\n` +
+      `Por favor, indiquenme los siguientes pasos para continuar con el proceso. Gracias!`
+    );
+
+    window.open(`https://wa.me/${waNumber}?text=${msg}`, '_blank');
+  });
+
+  // Formateo automático de cédula
+  document.getElementById('cedula').addEventListener('input', (e) => {
+    let v = e.target.value.replace(/\D/g, '').substring(0, 11);
+    if (v.length > 3) v = v.substring(0, 3) + '-' + v.substring(3);
+    if (v.length > 11) v = v.substring(0, 11) + '-' + v.substring(11);
+    e.target.value = v;
+  });
+</script>

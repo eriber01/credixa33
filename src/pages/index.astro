@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Calculator from '../components/Calculator.astro';
+import Steps from '../components/Steps.astro';
+import Requirements from '../components/Requirements.astro';
+import Testimonials from '../components/Testimonials.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+---
+
+<Layout>
+  <!-- Navegación sticky con glassmorphism -->
+  <Header />
+
+  <main id="main-content" tabindex="-1">
+    <!-- 1. Hero — Zona de conversión principal -->
+    <Hero />
+
+    <!-- 2. Cómo funciona — Proceso en 3 pasos -->
+    <Steps />
+
+    <!-- 3. Calculadora / Simulador de préstamo -->
+    <Calculator />
+
+    <!-- 4. Requisitos mínimos -->
+    <Requirements />
+
+    <!-- 5. Testimonios y confianza -->
+    <Testimonials />
+
+    <!-- 6. Formulario de solicitud rápida -->
+    <ContactForm />
+  </main>
+
+  <!-- Footer completo -->
+  <Footer />
+
+  <!-- Botón flotante permanente de WhatsApp -->
+  <WhatsAppButton />
+
+  <!-- Skip to main content (accesibilidad) -->
+  <a
+    href="#main-content"
+    class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-brand-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-xl focus:font-semibold focus:shadow-lg"
+  >
+    Saltar al contenido principal
+  </a>
+</Layout>
+
+<style>
+  /* Smooth scroll offset for sticky header */
+  :target {
+    scroll-margin-top: 80px;
+  }
+
+  /* Focus visible styles */
+  :focus-visible {
+    outline: 2px solid #FF7E20;
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
+</style>

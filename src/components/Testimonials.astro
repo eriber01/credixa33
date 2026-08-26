@@ -1,0 +1,117 @@
+---
+import { SITE } from '../config/site';
+
+const { testimonials } = SITE;
+
+function renderStars(count: number) {
+  return Array(count).fill('★').join('');
+}
+---
+
+<!-- ===== TESTIMONIOS ===== -->
+<section
+  class="py-20 lg:py-28 bg-[#F3F4F6]"
+  aria-label="Testimonios de clientes satisfechos"
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="text-center mb-14">
+      <span class="inline-flex items-center gap-2 bg-white text-yellow-600 text-sm font-semibold px-4 py-2 rounded-full mb-4 border border-yellow-200 shadow-sm">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24" stroke="none" aria-hidden="true">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+        Lo que dicen nuestros clientes
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-[#111827] mb-4">
+        Miles de dominicanos ya confían en Credixa33
+      </h2>
+      <p class="text-lg text-[#4B5563] max-w-xl mx-auto">
+        Leemos cada experiencia con atención. Aquí te compartimos lo que dicen quienes ya recibieron su préstamo.
+      </p>
+    </div>
+
+    <!-- Grid de testimonios -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        testimonials.map((t) => (
+          <article class="bg-white rounded-3xl border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-7 flex flex-col group">
+
+            <!-- Comilla decorativa -->
+            <div class="text-brand-200 text-6xl font-serif leading-none mb-2 group-hover:text-brand-300 transition-colors duration-200" aria-hidden="true">"</div>
+
+            <!-- Estrellas -->
+            <div class="flex items-center gap-0.5 mb-4" role="img" aria-label={`Calificación: ${t.rating} de 5 estrellas`}>
+              {Array(t.rating).fill(null).map(() => (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FBBF24" stroke="none" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              ))}
+            </div>
+
+            <!-- Texto del testimonio -->
+            <blockquote class="text-[#4B5563] text-sm leading-relaxed flex-1 mb-6">
+              {t.text}
+            </blockquote>
+
+            <!-- Autor -->
+            <footer class="flex items-center gap-3 pt-5 border-t border-gray-100">
+              <!-- Avatar con iniciales -->
+              <div class="w-11 h-11 bg-gradient-to-br from-brand-500 to-brand-600 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 shadow-md">
+                {t.initials}
+              </div>
+              <div>
+                <cite class="text-sm font-bold text-[#111827] not-italic">{t.name}</cite>
+                <p class="text-xs text-[#9CA3AF] flex items-center gap-1 mt-0.5">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  {t.location}
+                </p>
+              </div>
+
+              <!-- Verificado -->
+              <div class="ml-auto">
+                <span class="inline-flex items-center gap-1 bg-green-50 text-green-600 text-xs font-semibold px-2 py-1 rounded-full border border-green-200">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verificado
+                </span>
+              </div>
+            </footer>
+          </article>
+        ))
+      }
+    </div>
+
+    <!-- Trust bar inferior -->
+    <div class="mt-12 bg-white rounded-2xl border border-gray-200 shadow-sm px-8 py-6">
+      <div class="flex flex-wrap items-center justify-center gap-8 divide-x divide-gray-200">
+        <div class="flex items-center gap-3 px-4">
+          <div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center text-green-600">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <p class="text-sm font-bold text-[#111827]">100% Seguro</p>
+            <p class="text-xs text-[#6B7280]">Datos protegidos con SSL</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 px-4">
+          <div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <div>
+            <p class="text-sm font-bold text-[#111827]">Sin costos ocultos</p>
+            <p class="text-xs text-[#6B7280]">Transparencia total</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 px-4">
+          <div class="w-10 h-10 bg-brand-50 rounded-xl flex items-center justify-center text-brand-600">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div>
+            <p class="text-sm font-bold text-[#111827]">Proceso 100% digital</p>
+            <p class="text-xs text-[#6B7280]">Desde cualquier dispositivo</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

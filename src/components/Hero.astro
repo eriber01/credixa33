@@ -1,0 +1,189 @@
+---
+import { SITE } from '../config/site';
+
+const waUrl = `https://wa.me/${SITE.whatsapp.number}?text=${encodeURIComponent(SITE.whatsapp.defaultMessage)}`;
+---
+
+<!-- ===== HERO SECTION ===== -->
+<section
+  id="inicio"
+  class="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16"
+  aria-label="Sección principal"
+>
+  <!-- Fondo decorativo con patrón y degradado -->
+  <div class="absolute inset-0 bg-hero-pattern" aria-hidden="true"></div>
+  <div
+    class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-500/8 rounded-full blur-3xl -translate-y-1/4 translate-x-1/4"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-orange-100/50 rounded-full blur-3xl translate-y-1/4 -translate-x-1/4"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- Columna izquierda: Contenido -->
+      <div class="text-center lg:text-left">
+
+        <!-- Badge superior -->
+        <div class="inline-flex items-center gap-2 bg-brand-50 border border-brand-200 text-brand-600 text-sm font-semibold px-4 py-2 rounded-full mb-6 animate-slide-up">
+          <span class="w-2 h-2 bg-brand-500 rounded-full animate-pulse" aria-hidden="true"></span>
+          Préstamos personales rápidos y confiables en RD
+        </div>
+
+        <!-- Titular principal -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#111827] leading-tight tracking-tight mb-6">
+          Tu crédito aprobado
+          <span class="relative inline-block">
+            <span class="text-brand-500"> en 24 horas</span>
+            <!-- Underline decorativo -->
+            <svg class="absolute -bottom-2 left-0 w-full" height="6" viewBox="0 0 200 6" fill="none" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M0 5 Q50 0 100 5 Q150 10 200 5" stroke="#FF7E20" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </h1>
+
+        <!-- Párrafo de apoyo -->
+        <p class="text-lg sm:text-xl text-[#4B5563] leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+          En <strong class="text-[#111827] font-semibold">Credixa33</strong> tenemos opciones de financiamiento para
+          <strong class="text-brand-500">empleados</strong>,
+          <strong class="text-brand-500">emprendedores</strong> y
+          <strong class="text-brand-500">pensionados</strong>.
+          Montos desde <strong class="text-[#111827]">RD$5,000</strong> hasta <strong class="text-[#111827]">RD$200,000</strong> con cuotas que se adaptan a ti.
+        </p>
+
+        <!-- Trust indicators -->
+        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-10">
+          <div class="flex items-center gap-1.5 text-sm text-[#4B5563]">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Sin trámites complicados</span>
+          </div>
+          <div class="flex items-center gap-1.5 text-sm text-[#4B5563]">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Desembolso directo a tu cuenta</span>
+          </div>
+          <div class="flex items-center gap-1.5 text-sm text-[#4B5563]">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Cuotas flexibles</span>
+          </div>
+        </div>
+
+        <!-- Doble CTA -->
+        <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+          <a
+            href={waUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2.5 bg-brand-500 hover:bg-brand-600 text-white font-bold text-base px-7 py-4 rounded-2xl shadow-lg shadow-brand-500/30 hover:shadow-xl hover:shadow-brand-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+            aria-label="Solicitar crédito ahora por WhatsApp"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Solicitar Crédito Ahora
+          </a>
+          <a
+            href="#requisitos"
+            class="inline-flex items-center justify-center gap-2 border-2 border-[#E5E7EB] hover:border-brand-500 text-[#374151] hover:text-brand-500 font-semibold text-base px-7 py-4 rounded-2xl transition-all duration-200 hover:bg-brand-50"
+          >
+            Ver Requisitos
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Columna derecha: Tarjeta de aprobación flotante -->
+      <div class="flex items-center justify-center lg:justify-end">
+        <div class="relative w-full max-w-sm">
+
+          <!-- Tarjeta principal -->
+          <div class="animate-float bg-white rounded-3xl shadow-2xl shadow-gray-200/80 border border-gray-100 p-7">
+            <!-- Header de la tarjeta -->
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-2.5">
+                <div class="w-10 h-10 bg-brand-500 rounded-2xl flex items-center justify-center shadow-md">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="5" width="20" height="14" rx="3"/>
+                    <line x1="2" y1="10" x2="22" y2="10"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-xs text-[#9CA3AF] font-medium uppercase tracking-wider">Solicitud</p>
+                  <p class="text-sm font-bold text-[#111827]">Credixa33</p>
+                </div>
+              </div>
+              <!-- Badge estado -->
+              <span class="inline-flex items-center gap-1.5 bg-green-50 text-green-700 text-xs font-bold px-3 py-1.5 rounded-full border border-green-200">
+                <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+                Aprobado
+              </span>
+            </div>
+
+            <!-- Monto -->
+            <div class="bg-gradient-to-br from-brand-500 to-brand-600 rounded-2xl p-5 mb-5 text-white">
+              <p class="text-sm font-medium opacity-90 mb-1">Monto aprobado</p>
+              <p class="text-4xl font-extrabold tracking-tight">RD$50,000</p>
+              <div class="flex items-center gap-2 mt-3">
+                <span class="text-xs bg-white/20 px-2.5 py-1 rounded-full font-medium">Cuotas mensuales</span>
+                <span class="text-xs bg-white/20 px-2.5 py-1 rounded-full font-medium">12 meses</span>
+              </div>
+            </div>
+
+            <!-- Detalles -->
+            <div class="space-y-3">
+              <div class="flex items-center justify-between py-2 border-b border-gray-100">
+                <span class="text-sm text-[#6B7280]">Estado</span>
+                <span class="text-sm font-semibold text-green-600 flex items-center gap-1">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Pre-aprobado
+                </span>
+              </div>
+              <div class="flex items-center justify-between py-2 border-b border-gray-100">
+                <span class="text-sm text-[#6B7280]">Tiempo de respuesta</span>
+                <span class="text-sm font-semibold text-[#111827]">≤ 24 horas</span>
+              </div>
+              <div class="flex items-center justify-between py-2">
+                <span class="text-sm text-[#6B7280]">Desembolso</span>
+                <span class="text-sm font-semibold text-[#111827]">Cuenta bancaria</span>
+              </div>
+            </div>
+
+            <!-- CTA mini -->
+            <a
+              href={waUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-5 flex items-center justify-center gap-2 w-full bg-brand-50 hover:bg-brand-100 text-brand-600 font-semibold text-sm py-3 rounded-xl transition-colors duration-200"
+              aria-label="Solicitar tu crédito ahora"
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Quiero este crédito
+            </a>
+          </div>
+
+          <!-- Indicadores flotantes decorativos -->
+          <div class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-lg border border-gray-100 px-4 py-2.5 flex items-center gap-2 animate-bounce" style="animation-duration:3s;" aria-hidden="true">
+            <span class="text-lg">⚡</span>
+            <div>
+              <p class="text-xs font-bold text-[#111827]">Aprobación</p>
+              <p class="text-xs text-brand-500 font-semibold">Súper Rápida</p>
+            </div>
+          </div>
+          <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-lg border border-gray-100 px-4 py-2.5 flex items-center gap-2" style="animation:float 4s ease-in-out infinite 1s;" aria-hidden="true">
+            <span class="text-lg">🔒</span>
+            <div>
+              <p class="text-xs font-bold text-[#111827]">100% Seguro</p>
+              <p class="text-xs text-[#6B7280]">y Confidencial</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
