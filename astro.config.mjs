@@ -8,10 +8,16 @@ export default defineConfig({
   output: 'static',
   vite: {
     server: {
+      host: true,
       allowedHosts: [
         'desktop-4c9k37b.tail007208.ts.net',
         '.ts.net',
+        'localhost',
+        '127.0.0.1',
       ],
+      hmr: {
+        clientPort: 4321,
+      },
     },
   },
 });
