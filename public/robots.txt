@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://credixa33.com/sitemap-index.xml
