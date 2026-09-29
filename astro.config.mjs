@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://credixa33.com',
+  site: 'https://credinova23.com',
   integrations: [tailwind(), sitemap()],
   output: 'static',
   vite: {

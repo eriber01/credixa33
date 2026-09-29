@@ -16,7 +16,7 @@ const defaultMonths = 25;
 
     <!-- Header de sección -->
     <div class="text-center mb-12">
-      <span class="inline-flex items-center gap-2 bg-blue-50 text-[#0047BA] text-sm font-bold px-4 py-2 rounded-full mb-3 border border-blue-200 shadow-sm">
+      <span class="inline-flex items-center gap-2 bg-emerald-50 text-[#044E35] text-sm font-bold px-4 py-2 rounded-full mb-3 border border-emerald-200 shadow-sm">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="12" y2="15"/>
         </svg>
@@ -53,7 +53,7 @@ const defaultMonths = 25;
                 min="1000"
                 max="100000"
                 step="500"
-                class="w-full bg-[#F8FAFC] border border-gray-200 hover:border-gray-300 focus:border-[#0047BA] focus:bg-white focus:outline-none rounded-xl px-4 py-3.5 text-base font-semibold text-[#111827] transition-all duration-150"
+                class="w-full bg-[#F8FAFC] border border-gray-200 hover:border-gray-300 focus:border-[#044E35] focus:bg-white focus:outline-none rounded-xl px-4 py-3.5 text-base font-semibold text-[#111827] transition-all duration-150"
                 placeholder="10000"
               />
               <span class="absolute right-4 top-1/2 -translate-y-1/2 text-sm font-semibold text-gray-400 select-none">
@@ -159,7 +159,7 @@ const defaultMonths = 25;
           <!-- Fila Total (Cuota Mensual) -->
           <div class="flex justify-between items-center pt-3 pb-1">
             <span class="text-lg font-bold text-[#111827]">Total</span>
-            <span id="summary-total" class="text-2xl font-extrabold text-[#0047BA]">413,13 €</span>
+            <span id="summary-total" class="text-2xl font-extrabold text-[#044E35]">413,13 €</span>
           </div>
           <p class="text-xs text-[#9CA3AF] text-right mb-6">
             cuota fija mensual estimada
@@ -172,7 +172,7 @@ const defaultMonths = 25;
           href="#"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center justify-center gap-2.5 bg-gradient-to-r from-[#C69214] via-[#D4AF37] to-[#B8860B] hover:from-[#B8860B] hover:to-[#9E6D08] text-white font-bold text-sm px-6 py-4 rounded-2xl shadow-lg shadow-amber-600/25 hover:shadow-xl hover:shadow-amber-600/35 transition-all duration-200"
+          class="flex items-center justify-center gap-2.5 bg-gradient-to-r from-[#C59B27] via-[#D4AF37] to-[#B8860B] hover:from-[#B8860B] hover:to-[#9E6D08] text-white font-bold text-sm px-6 py-4 rounded-2xl shadow-lg shadow-amber-600/25 hover:shadow-xl hover:shadow-amber-600/35 transition-all duration-200"
           aria-label="Solicitar este préstamo por WhatsApp"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -201,7 +201,7 @@ const defaultMonths = 25;
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background: #0047BA;
+    background: #044E35;
     border: 3px solid #ffffff;
     cursor: pointer;
     box-shadow: 0 2px 6px rgba(0,0,0,0.25);
@@ -214,7 +214,7 @@ const defaultMonths = 25;
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background: #0047BA;
+    background: #044E35;
     border: 3px solid #ffffff;
     cursor: pointer;
     box-shadow: 0 2px 6px rgba(0,0,0,0.25);
@@ -235,7 +235,7 @@ const defaultMonths = 25;
   const summaryTotal = document.getElementById('summary-total');
   const calcWaBtn = document.getElementById('calc-wa-btn');
 
-  function updateSliderBackground(slider, color = '#0047BA') {
+  function updateSliderBackground(slider, color = '#044E35') {
     const min = Number(slider.min) || 0;
     const max = Number(slider.max) || 100;
     const val = Number(slider.value);
@@ -265,8 +265,8 @@ const defaultMonths = 25;
     rateValueDisplay.textContent = rate;
     monthsValueDisplay.textContent = months;
 
-    updateSliderBackground(rateSlider, '#0047BA');
-    updateSliderBackground(monthsSlider, '#0047BA');
+    updateSliderBackground(rateSlider, '#044E35');
+    updateSliderBackground(monthsSlider, '#044E35');
 
     summaryAmount.textContent = formatMoney(amount);
     summaryRate.textContent = `${rate} %`;
@@ -277,7 +277,7 @@ const defaultMonths = 25;
 
     // WhatsApp pre-filled message
     const msg = encodeURIComponent(
-      `Hola Credixa33! He calculado mi préstamo en la web con los siguientes datos:\n\n` +
+      `Hola Credinova23! He calculado mi préstamo en la web con los siguientes datos:\n\n` +
       `* Monto solicitado: ${formatMoney(amount)}\n` +
       `* Tasa de interés anual: ${rate} %\n` +
       `* Plazo: ${months} meses\n` +

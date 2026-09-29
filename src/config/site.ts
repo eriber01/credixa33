@@ -1,14 +1,14 @@
 // ============================================================
-// CREDIXA33 — CONFIGURACIÓN CENTRALIZADA DEL SITIO
+// CREDINOVA23 — CONFIGURACIÓN CENTRALIZADA DEL SITIO
 // Edita este archivo para ajustar datos sin tocar los componentes
 // ============================================================
 
 export const SITE = {
-  name: "Credixa33",
-  tagline: "Soluciones Financieras a tu alcance | Préstamos personales en España",
+  name: "Credinova23",
+  tagline: "Tu futuro, nuestro compromiso | Préstamos personales en España",
   description:
-    "Credixa33 ofrece préstamos personales rápidos y confiables en España. Soluciones Financieras a tu alcance. Aprobación en 24 horas, montos flexibles y condiciones transparentes. Solicita hoy mismo.",
-  url: "https://credixa33.com",
+    "Credinova23 ofrece préstamos personales rápidos y confiables en España. Tu futuro, nuestro compromiso. Aprobación en 24 horas, montos flexibles y condiciones transparentes. Solicita hoy mismo.",
+  url: "https://credinova23.com",
   locale: "es-ES",
 
   // ── Contacto ────────────────────────────────────────────────
@@ -16,9 +16,9 @@ export const SITE = {
     number: "447446964025",
     display: "+44 7446 964025",
     defaultMessage:
-      "Hola, estoy interesado en solicitar un préstamo personal con Credixa33. ¿Pueden orientarme?",
+      "Hola, estoy interesado en solicitar un préstamo personal con Credinova23. ¿Pueden orientarme?",
   },
-  email: "credixacreditos@gmail.com",
+  email: "contacto@credinova23.com",
 
   // ── Horarios de atención (España) ───────────────────────────
   hours: {
@@ -51,12 +51,12 @@ export const SITE = {
 
   // ── SEO / Open Graph ────────────────────────────────────────
   seo: {
-    title: "Credixa33 | Préstamos Personales Rápidos en España",
+    title: "Credinova23 | Préstamos Personales Rápidos en España",
     description:
-      "Préstamos personales rápidos en España con pagos mensuales. Aprobación en 24h, montos desde 1.000€ hasta 100.000€. ¡Solicita ahora!",
+      "Préstamos personales rápidos en España con pagos mensuales. Aprobación en 24h, montos desde 1.000€ hasta 100.000€. ¡Solicita ahora con Credinova23!",
     ogImage: "/og-image.jpg",
     keywords:
-      "préstamos personales españa, crédito rápido españa, préstamos en madrid, crédito personal españa, pagos mensuales",
+      "préstamos personales españa, crédito rápido españa, préstamos en madrid, crédito personal españa, pagos mensuales, credinova23",
   },
 
   // ── Navegación ──────────────────────────────────────────────
